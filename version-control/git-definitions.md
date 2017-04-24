@@ -17,3 +17,5 @@ In Git, a commit is a save point. A good commit message is specific to the actua
 * What is a merge conflict?
 
 A merge conflict can occur under a few situations. One possibility is that different people made changes to the same line of the same file. A merge conflict can also occur when someone changes a file and someone else deletes that file.
+
+additional text for tagging
