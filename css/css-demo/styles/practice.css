@@ -1,0 +1,31 @@
+section#contact-info {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid black;
+  padding: 20px;
+  font-size: 0.8em;
+}
+
+.job{
+    background-color: #e9e5dc;
+    padding: 20px;
+    margin-top: 5px;
+    border-radius: 10%;
+}
+
+.list{
+  list-style-type: square;
+  font-size: 0.8em;
+}
+
+#email-hover:hover{
+    color: red;
+}
+
+.job h3{
+    font-style: italic;
+}
