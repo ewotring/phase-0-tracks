@@ -21,6 +21,18 @@ ul{
     list-style-type: upper-roman;
 }
 
+th{
+    text-decoration: underline;
+}
+
+tr:nth-child(even){
+    background: gray;
+}
+
+tr:nth-child(odd){
+    background: beige;
+}
+
 .question5{
     border-style: solid;
     padding: 10px;
