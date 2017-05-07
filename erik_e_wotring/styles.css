@@ -17,6 +17,10 @@ nav{
     vertical-align: top;
 }
 
+ul{
+    list-style-type: upper-roman;
+}
+
 .question5{
     border-style: solid;
     padding: 10px;
