@@ -7,3 +7,11 @@ body{
     font-size: 250%;
     background: yellow;
 }
+
+.question5{
+    border-style: solid;
+    padding: 15%;
+    margin: 15%;
+    background-color: red;
+    font-style: italic;
+}
