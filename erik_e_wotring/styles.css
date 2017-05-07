@@ -8,6 +8,15 @@ body{
     background: yellow;
 }
 
+main{
+    display: inline-block;
+}
+
+nav{
+    display: inline-block;
+    vertical-align: top;
+}
+
 .question5{
     border-style: solid;
     padding: 10px;
@@ -15,4 +24,3 @@ body{
     background-color: red;
     font-style: italic;
 }
-
