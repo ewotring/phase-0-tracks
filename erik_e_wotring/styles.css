@@ -4,14 +4,15 @@
 
 body{
     font-variant: helvetica;
-    font-size: 250%;
+    font-size: 150%;
     background: yellow;
 }
 
 .question5{
     border-style: solid;
-    padding: 15%;
-    margin: 15%;
+    padding: 10px;
+    margin: 10px;
     background-color: red;
     font-style: italic;
 }
+
