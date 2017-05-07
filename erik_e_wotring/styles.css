@@ -28,3 +28,11 @@ ul{
     background-color: red;
     font-style: italic;
 }
+
+.header{
+    letter-spacing: 5px;
+}
+
+.header:hover{
+    color: red;
+}
