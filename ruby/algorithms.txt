@@ -1,0 +1,28 @@
+Elevator Algorithm
+    Ask user for desired floor number
+    read floor number on each button
+    If number on button matches user desired floor number, press button
+    Otherwise, move to next floor button
+
+Getting out of bed
+    When wake, look at clock
+        if time is less than wake time, stay in bed
+        otherwise, get out of bed
+    go to kitchen
+        if thirsty, pour water into glass
+            drink water
+        otherwise, make coffee
+    place water into kettle
+    turn on kettle
+    place two scoops coffee beans into grinder
+    grind beans until resistance drops
+    place ground beans into bottom of French press
+    let water finish boiling
+    pour hot water onto ground coffee
+    stir with chopstick
+    place lid on French press with filter left up
+    Wait a few minutes
+        while waiting, brush teeth
+    press grounds to bottom of press
+    pour coffee into mug
+    drink coffee
