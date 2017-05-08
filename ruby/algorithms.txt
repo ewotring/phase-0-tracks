@@ -1,0 +1,6 @@
+Elevator Algorithm
+    Ask user for desired floor number
+    read floor number on each button
+    If number on button matches user desired floor number, press button
+    Otherwise, move to next floor button
+
