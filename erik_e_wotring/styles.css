@@ -1,0 +1,50 @@
+/*body{
+    background: blue;
+}*/
+
+body{
+    font-variant: helvetica;
+    font-size: 150%;
+    background: yellow;
+}
+
+main{
+    display: inline-block;
+}
+
+nav{
+    display: inline-block;
+    vertical-align: top;
+}
+
+ul{
+    list-style-type: upper-roman;
+}
+
+th{
+    text-decoration: underline;
+}
+
+tr:nth-child(even){
+    background: gray;
+}
+
+tr:nth-child(odd){
+    background: beige;
+}
+
+.question5{
+    border-style: solid;
+    padding: 10px;
+    margin: 10px;
+    background-color: red;
+    font-style: italic;
+}
+
+.header{
+    letter-spacing: 5px;
+}
+
+.header:hover{
+    color: red;
+}
