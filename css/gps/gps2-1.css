@@ -1,3 +1,23 @@
-body {
-    background: blue;
+.column-1 {
+  display: inline-block;
+  vertictal-align: top;
+  /*background-color: green;*/
+  width: 45%;
+  font-family: helvetica;
+  background-image: url("https://assets-cdn.github.com/images/modules/logos_page/Octocat.png");
+  background-repeat: no-repeat;
+  background-size: 120%;
+}
+
+.column-2 {
+  display: inline-block;
+  vertical-align: top;
+  /*background-color: blue;*/
+  width: 45%;
+  font-family: helvetica;
+}
+
+h1, h2 {
+  font-family: courier-new;
+  background-color: red;
 }
