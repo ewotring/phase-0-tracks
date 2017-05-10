@@ -16,15 +16,18 @@ while i < employees do
 
     result="Results inconclusive."
 
+    allergy="nil"
+
+    until allergy=="done" || allergy=="sunshine" do
+        puts "Name your allergies, one at a time."
+        allergy=gets.chomp
+    end
+
     if 2017-year==age && (bread=="y" || insurance=="y")
         result="Probably not a vampire."
     end
 
-    if 2017-year!=age && (bread=="n" || insurance=="n")
-        result="Probably a vampire."
-    end
-
-    if 2017-year!=age && bread=="n" && insurance=="n"
+    if allergy=="sunshine" || (2017-year!=age && (bread=="n" || insurance=="n"))
         result="Probably a vampire."
     end
 
