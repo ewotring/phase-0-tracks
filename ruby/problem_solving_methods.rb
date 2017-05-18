@@ -16,20 +16,35 @@
 #
 #puts search_array(arr, num_search)
 
-puts "length of sequence"
-sequence=gets.to_i
+#puts "length of sequence"
+#sequence=gets.to_i
 #Build an array element by element.
 #Each element is the sum of the prior two elements.
 
-arr1=[0,1]
-i=2
-while i<sequence
-    arr1[i]=arr1[i-2]+arr1[i-1]
+#arr1=[0,1]
+#i=2
+#while i<sequence
+#    arr1[i]=arr1[i-2]+arr1[i-1]
+#    i+=1
+#end
+#
+#puts arr1
+#
+#if arr1[99]==218922995834555169026
+#    puts "it matches!"
+#end
+
+#pseudocode
+#If one element is larger than the next, then the two elements are switched.
+
+
+arr2=[5, 4, 3, 2, 1]
+i=0
+while i<arr2.length-1
+    if arr2[i+1]<arr2[i]
+        arr2[i+1], arr2[i]=arr2[i], arr2[i+1]
+    end
     i+=1
 end
 
-puts arr1
-
-if arr1[99]==218922995834555169026
-    puts "it matches!"
-end
+puts arr2
