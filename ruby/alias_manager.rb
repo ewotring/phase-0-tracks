@@ -59,8 +59,11 @@ def vowel (name)
     p array.join
 end
 
-puts "what is the agent name?"
-
+puts "What is the agent name?"
 full_name=gets.chomp
-
-puts vowel (full_name)
+    
+until full_name=="quit"
+    puts vowel (full_name)
+    puts "What is the agent name? (Type 'quit' to exit.)"
+    full_name=gets.chomp
+end
