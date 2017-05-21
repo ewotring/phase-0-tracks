@@ -56,14 +56,18 @@ def vowel (name)
         end
         i+=1
     end
-    p array.join
+    return array.join
 end
+
 
 puts "What is the agent name?"
 full_name=gets.chomp
-    
+agent=Hash.new    
 until full_name=="quit"
+    agent["#{full_name} is known as"] = vowel (full_name)
     puts vowel (full_name)
     puts "What is the agent name? (Type 'quit' to exit.)"
     full_name=gets.chomp
 end
+
+puts agent
