@@ -23,8 +23,6 @@ loop do
     switch=0
     i=0
     until i==7
-        p zombie_apocalypse_supplies[i]
-        p zombie_apocalypse_supplies[i+1]
         if zombie_apocalypse_supplies[i+1]<zombie_apocalypse_supplies[i]
             zombie_apocalypse_supplies[i+1], zombie_apocalypse_supplies[i]=zombie_apocalypse_supplies[i], zombie_apocalypse_supplies[i+1]
             switch=1
@@ -86,7 +84,6 @@ combined_gear=zombie_apocalypse_supplies+other_survivor_supplies
 unique_combined_gear=combined_gear.uniq
 p unique_combined_gear
 
-
 # Hash Drills
 
 extinct_animals = {
@@ -109,11 +106,43 @@ extinct_animals.each{|key, value| print " #{key} - #{value} *"}
 # the year 2000. Do not use any special built-in methods.
 # ----
 
+extinct_animals = {
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "Passenger Pigeon" => 1914,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
+extinct_before_2000=Hash.new
+extinct_animals.each do |key, value|
+    if value<2000
+        extinct_before_2000[key] = value
+    end
+end
+puts extinct_before_2000
+# I was unable to figure out how to keep the same hash, so I had to make a new hash.
+
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
 # ----
+
+extinct_animals = {
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "Passenger Pigeon" => 1914,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
+
+extinct_animals.each{|key, value| extinct_animals[key]=value+=3}
+
+print extinct_animals
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
@@ -123,8 +152,42 @@ extinct_animals.each{|key, value| print " #{key} - #{value} *"}
 # Do not use any special built-in methods.
 # ----
 
+extinct_animals = {
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "Passenger Pigeon" => 1914,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
+
+extinct_animals.each{|key, value| 
+    case key
+        when "Andean Cat" 
+            puts "Andean Cat is extinct"
+        when "Dodo"
+            puts "Dodo is extinct"
+        when "Saiga Antelope"
+            puts "Saiga Antelope is extinct"
+        else
+            puts "The animal is not extinct"
+        end}
+
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
+
+extinct_animals = {
+  "Tasmanian Tiger" => 1936,
+  "Eastern Hare Wallaby" => 1890,
+  "Dodo" => 1662,
+  "Pyrenean Ibex" => 2000,
+  "Passenger Pigeon" => 1914,
+  "West African Black Rhinoceros" => 2011,
+  "Laysan Crake" => 1923
+}
+
+print extinct_animals.assoc("Passenger Pigeon")
