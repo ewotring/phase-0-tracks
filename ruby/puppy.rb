@@ -1,0 +1,4 @@
+SPECIES--------------
+Puppy
+
+CHARACTERISTICS------
