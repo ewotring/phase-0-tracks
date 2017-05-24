@@ -47,16 +47,24 @@ def add_to_list(item, value=1, list_add)
 end
 
 def rem_from_list(item, list_rem)
-  list_maker("carrots apples cereal pizza")
   list_rem=list_rem.delete_if {|key, value| key==item}
   list_rem
 end
 
+def change_value(item, quantity, list_new_qty)
+  list_new_qty[item]=quantity
+  list_new_qty
+end
 
+def pretty_hash(pretty_list)
+  pretty_list.each{|key, value| puts "The quantity of #{key} is #{value}."}
+end
 
 p list_maker("carrots apples cereal pizza")
 p add_to_list("cheese", list_maker("carrots apples cereal pizza"))
 p rem_from_list("carrots", list_maker("carrots apples cereal pizza"))
+p change_value("apples", 2, list_maker("carrots apples cereal pizza"))
+p pretty_hash(list_maker("carrots apples cereal pizza"))
 
 #splat
 #defoult argument/ parameter values
