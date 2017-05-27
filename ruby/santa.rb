@@ -2,8 +2,12 @@
 class Santa
     
     #Define initialize method
-    def initialize
+    def initialize(gender, ethnicity)
         puts "Initializing Santa instance...\n\n"
+        @gender = gender
+        @ethnicity = ethnicity
+        @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+        @age = 0
     end
     
     #Define eat_milk_and_cookies method that takes a type of cookie and outputs that it was tasty
@@ -22,3 +26,4 @@ santa_1 = Santa.new
 
 santa_1.eat_milk_and_cookies("chocolate chip cookie")
 santa_1.speak
+
