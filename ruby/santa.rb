@@ -4,12 +4,14 @@ class Santa
     attr_accessor :gender
 
     #Define initialize method
-    def initialize(gender, ethnicity)
+    def initialize(gender, ethnicity, *age)
         puts "Initializing Santa instance...\n\n"
         @gender = gender
         @ethnicity = ethnicity
         @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-        @age = 0
+        #@age = 0
+        @age = age[0].to_i
+        #p @age.class
     end
     
     #Define eat_milk_and_cookies method that takes a type of cookie and outputs that it was tasty
@@ -79,3 +81,28 @@ santa_6 = Santa.new("female", "prefer not to say")
 santa_7 = Santa.new("gender fluid", "Mystical Creature (unicorn)")
 santa_8 = Santa.new("N/A", "N/A")
 
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
+
+prng = Random.new
+random_santas = []
+10.times do |i|
+    random_number = prng.rand(141)
+    p random_number.class
+    random_santas << Santa.new(example_genders.sample, example_ethnicities.sample, random_number)
+    p random_santas[i]
+    random_santas[i].gender
+    random_santas[i].ethnicity
+    random_santas[i].age
+    random_santas[i].eat_milk_and_cookies("chocolate chip cookie")
+    random_santas[i].speak
+    puts "Previous age was #{random_santas[i].age}"
+    puts "New age is #{random_santas[i].celebrate_birthday}"
+    puts "Ethnicity is #{random_santas[i].ethnicity}"
+    puts "New reindeer ranking is #{random_santas[i].get_mad_at ("Dasher")}"
+
+end
