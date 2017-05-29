@@ -12,7 +12,7 @@ My pseudocode:
 
 The first user enters a word.
 
-This word is a string and is separated into an array. (split)
+This word is a string and is separated into an array. (split or chars)
 
 A new array is created that is all underscores. This array is the same length of the first user's word.
 
