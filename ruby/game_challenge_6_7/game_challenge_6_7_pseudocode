@@ -1,0 +1,27 @@
+Release 1 statement:
+
+Using plain old English in a text file or other scratch pad, pseudocode a class for a word-guessing game that meets the following specifications. Assume your driver code will handle input and output as far as the user is concerned. In other words, write a class designed for a computer program to use, not one designed for a human to use directly, then use driver code to bridge the gap between human and Ruby object.
+
+One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
+Guesses are limited, and the number of guesses available is related to the length of the word.
+Repeated guesses do not count against the user.
+The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
+The user should get a congratulatory message if they win, and a taunting message if they lose.
+
+My pseudocode:
+
+The first user enters a word.
+
+This word is a string and is separated into an array. (split)
+
+A new array is created that is all underscores. This array is the same length of the first user's word.
+
+The length of this array determines the number of guesses by the other user.
+
+Guesses are saved in an array. If a guess matches a previous entry in the array, then the counter does not increment.
+
+After each guess, the array is changed into a string and printed for the user. (each)
+
+If the user gets rid of all of the underscores before the turns are used up, "You win!"
+
+Else, "You lose!"
