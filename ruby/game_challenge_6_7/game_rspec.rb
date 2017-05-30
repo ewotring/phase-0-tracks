@@ -20,15 +20,22 @@ describe Game do
   end
 
   it "saves guesses in an array" do
-    expect(word.guess_limit).to eq 10
+    expect(word.guess_array("e")).to eq ["e"]
   end
 
   it "does not count repeated guesses against user" do
+    word.guess_array("e")
+    expect(word.guess_count("e")).to eq 0
   end
 
   it "updates, and prints, the underscore array with the correct letter in the correct place when the user makes a correct guess" do
+    word.to_underscore
+    expect(word.check_letter("a")).to eq ["_", "_", "a", "_", "_", "a", "_", "_", "_", "_"]
   end
 
   it "Gives a winning or a losing message" do
+    word.to_underscore
+    word.check_letter("a")
+    expect(word.win_or_lose).to eq "You lose!"
   end
 end
