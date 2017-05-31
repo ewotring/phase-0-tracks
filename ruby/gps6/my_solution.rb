@@ -29,11 +29,17 @@ attr_reader :virus_effects
   end
 
   # The virus_effects method looks like a getter for predicted_deaths and speed_of_spread.
+
+  #private
+
   def virus_effects
     predicted_deaths#(@population_density, @population, @state)
     speed_of_spread#(@population_density, @state)
   end
 
+  # the private method appears to make the following methods only available within the class.
+  # When I moved private above virus_effects, I got an error saying that a private method was called.
+  # Such a method could be used when a given set of methods would only be wanted to be used within the class.
   private
 
   # This depends on the population density, establishing a positive correlation between population density and the number of deaths.
@@ -104,3 +110,25 @@ STATE_DATA.each do |state, data|
 end
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+ 
+# The keys are different. The keys for the outer hash are strings. The keys for the nested hash are symbols.
+ 
+# What does require_relative do? How is it different from require?
+ 
+# This connects to the data file.
+# This statement essentially copies the data from the file into this location of the program.
+# Difference is that require requires the entire directory path for the file.
+ 
+# What are some ways to iterate through a hash?
+ 
+# The each method works. As well, the each_value passes the value for each key as a parameter. 
+# You could use the key method to make an array of the keys, then iterate through the array, passing the key to another method as an argument.
+ 
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+ 
+# The fact that the variables are all instance variables, and that they are called directly in each of the methods called by virus_effects, interested me because the variables were totally redundant in virus_effects. Then, the arguments for the called methods can be commented out.
+ 
+# What concept did you most solidify in this challenge?
+
+# I think I most benefitted by looking more carefully at the variables passed as parameters in virus_effect. Nonetheless, I also learned while making the report for all 50 states in a DRY way.
