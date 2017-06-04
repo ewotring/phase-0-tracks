@@ -17,7 +17,6 @@ zombie_apocalypse_supplies.each{|x| print x, "*"}
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
 
-
 n=8
 loop do
     switch=0
@@ -31,6 +30,7 @@ loop do
     end
     break if switch==0
 end
+
 
 puts zombie_apocalypse_supplies
 # Didn't quite get the edge case of the capital letters in CB radio, but the bubble sort mostly worked. The capital letters must evaluate to a smaller value than the lower case letters
