@@ -1,0 +1,4 @@
+Yield in methods
+implicit return
+    in method "return" or "p" makes an explicit return
+difference between instance variables and attributes
