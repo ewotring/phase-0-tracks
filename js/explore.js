@@ -23,5 +23,6 @@ function reverseTheString(string) {
     reverseString = reverseSplitString.join('');
     console.log(reverseString)
 }
-
-reverseTheString("string")
+if (1 == 1){
+    reverseTheString("string")
+}
