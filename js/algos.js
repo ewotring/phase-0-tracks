@@ -17,7 +17,7 @@ function longestString(array) {
         }
         
     }
-    console.log(longestStr);
+    return longestStr;
 }
 
 // Takes two objects as arguments
@@ -43,8 +43,45 @@ function keyValueMatch(object1, object2){
     //}
 }
 
-// 
+// Need a random integer between 1 and 10 for each string
+// Need random letters
+// Could make a string of the alphabet, and randomly select from that with the same random number generator
 
+function randomInt(min, max) {
+    var min = Math.ceil(min);
+    var max = Math.floor(max);
+    return Math.floor(Math.random()*(max - min)) + min;
+}
+
+function randomWord() {
+    var letters = "abcdefghiklmnopqrstuvwxyz";
+    //console.log("test1")
+    var splitLetters = letters.split('');
+    //console.log(splitLetters);
+    var stringLength = randomInt(1, 10);
+    //console.log(stringLength);
+    var randArr = [];
+    for (var i = 0; i < stringLength; i++) {
+        var randIdx = randomInt(0, 25);
+        //console.log(randIdx);
+        randArr.push(splitLetters[randIdx]);
+        //console.log(randArr);
+    }
+    //console.log("test1")
+    var randomString = randArr.join('')
+    return randomString
+    //console.log(randomString);
+}
+
+function randomArray (arrLength){
+    var arrayRandom = [];
+    for (var i = 0; i < arrLength; i++) {
+        arrayRandom.push(randomWord())
+    }
+    console.log(arrayRandom);
+    return arrayRandom
+}
+  
 var array = ["long phrase", "longest phrase", "longer phrase"];
 var array2 = ["ben", "erik", "benjamin", "balthazar"]
 longestString(array);
@@ -53,3 +90,5 @@ longestString(array2);
 keyValueMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54})
 keyValueMatch({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3})
 keyValueMatch({animal: "Dog", legs: 4}, {animal: "Cat", legs: 3})
+
+console.log(longestString(randomArray(6)))
