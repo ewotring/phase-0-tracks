@@ -6,16 +6,12 @@
 // The length of a string can be checked with .length
 
 function longestString(array) {
-    //var array = [];
+    var arrayLength = array.length;
     var longestStr = "";
-    for (var i = 0; i < array.length - 1; i++) {
-        if (array[i].length > array[i+1].length) {
+    for (var i = 0; i < array.length; i++) {
+        if (longestStr.length < array[i].length) {
             longestStr = array[i];
         }
-        else {
-            longestStr = array[i+1];
-        }
-        
     }
     return longestStr;
 }
