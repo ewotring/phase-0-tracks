@@ -71,3 +71,23 @@ sqlite> SELECT * FROM band_members;
 1|Lars|35|false|3
 2|Antoine|64|true|2
 4|William|28|false|2
+
+RELEASE 3:  Research on your own
+
+sqlite> SELECT * FROM band_members JOIN bands ON band_members.band_id = bands.id;
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+4|William|28|false|2|2|Roaring Salamander|2|false
+
+sqlite> SELECT * FROM band_members INNER JOIN bands ON band_members.band_id = bands.id;
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+4|William|28|false|2|2|Roaring Salamander|2|false
+
+sqlite> SELECT * FROM band_members LEFT JOIN bands ON band_members.band_id = bands.id;
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+4|William|28|false|2|2|Roaring Salamander|2|false
+
+sqlite> SELECT * FROM band_members RIGHT JOIN bands ON band_members.band_id = bands.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
