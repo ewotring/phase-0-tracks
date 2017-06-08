@@ -1,0 +1,73 @@
+1. Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM band_members;
+1|Lars|35|false|1
+2|Antoine|64|true|2
+3|Trevor|16|true|3
+4|William|28|false|2
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE band_members SET band_id=3 WHERE name="Lars";
+sqlite> SELECT * FROM band_members;
+1|Lars|35|false|3
+2|Antoine|64|true|2
+3|Trevor|16|true|3
+4|William|28|false|2
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM band_members, bands;
+1|Lars|35|false|3|1|Hammers of Rose|8|true
+1|Lars|35|false|3|2|Roaring Salamander|2|false
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|1|Hammers of Rose|8|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+2|Antoine|64|true|2|3|Wiggling Pinata|5|true
+3|Trevor|16|true|3|1|Hammers of Rose|8|true
+3|Trevor|16|true|3|2|Roaring Salamander|2|false
+3|Trevor|16|true|3|3|Wiggling Pinata|5|true
+4|William|28|false|2|1|Hammers of Rose|8|true
+4|William|28|false|2|2|Roaring Salamander|2|false
+4|William|28|false|2|3|Wiggling Pinata|5|true
+
+sqlite> SELECT * FROM band_members, bands WHERE band_members.band_id = bands.id;
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+3|Trevor|16|true|3|3|Wiggling Pinata|5|true
+4|William|28|false|2|2|Roaring Salamander|2|false
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT band_members.age, bands.heavy FROM band_members, bands;
+35|true
+35|false
+35|true
+64|true
+64|false
+64|true
+16|true
+16|false
+16|true
+28|true
+28|false
+28|true
+
+sqlite> SELECT band_members.age, bands.heavy FROM band_members, bands WHERE band_members.band_id = bands.id;
+35|true
+64|false
+16|true
+28|false
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> SELECT * FROM band_members;
+1|Lars|35|false|3
+2|Antoine|64|true|2
+3|Trevor|16|true|3
+4|William|28|false|2
+sqlite> DELETE FROM band_members WHERE name="Trevor";
+sqlite> SELECT * FROM band_members;
+1|Lars|35|false|3
+2|Antoine|64|true|2
+4|William|28|false|2
