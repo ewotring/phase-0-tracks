@@ -1,0 +1,17 @@
+sqlite> SELECT * FROM reviews LEFT JOIN businesses ON reviews.business_id = businesses.id LEFT JOIN users ON reviews.user_id = users.id;
+1|4|good lighting and friendly staff|1|1|1|Grundy Hollow Wedding Chapel|1|Bradford|Pitt
+2|3|Arrived 10 minutes late|2|2|2|Amir's Towing|2|Mandy|Kaling
+3|5|Great drinks, great service|3|3|3|The Beagle Nightclub|3|Angela|Jolie
+4|2|Dirty locker room, instructor never showed up|4|4|4|Lotus Yoga|4|Stephen|Wonder
+5|4|Drinks pricey, but nice atmosphere|3|2|3|The Beagle Nightclub|2|Mandy|Kaling
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews LEFT JOIN businesses ON reviews.business_id = businesses.id LEFT JOIN users ON reviews.user_id = users.id;
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4|good lighting and friendly staff
+Mandy|Kaling|Amir's Towing|3|Arrived 10 minutes late
+Angela|Jolie|The Beagle Nightclub|5|Great drinks, great service
+Stephen|Wonder|Lotus Yoga|2|Dirty locker room, instructor never showed up
+Mandy|Kaling|The Beagle Nightclub|4|Drinks pricey, but nice atmosphere
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews LEFT JOIN businesses ON reviews.business_id = businesses.id LEFT JOIN users ON reviews.user_id = users.id WHERE businesses.name = "The Beagle Nightclub";
+Angela|Jolie|The Beagle Nightclub|5|Great drinks, great service
+Mandy|Kaling|The Beagle Nightclub|4|Drinks pricey, but nice atmosphere
