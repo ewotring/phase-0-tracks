@@ -24,3 +24,9 @@ create_table_cmd = <<-SQL
 SQL
 
 db.execute(create_table_cmd)
+
+# Collect user input for the day's exercise
+
+# Store user input in database
+
+# Give user output from database
