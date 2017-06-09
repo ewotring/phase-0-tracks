@@ -91,3 +91,45 @@ sqlite> SELECT * FROM band_members LEFT JOIN bands ON band_members.band_id = ban
 
 sqlite> SELECT * FROM band_members RIGHT JOIN bands ON band_members.band_id = bands.id;
 Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+I'm a little confused. It looks like JOIN, INNER JOIN, and LEFT JOIN gave the same output. 
+
+sqlite> SELECT * FROM band_members CROSS JOIN bands ON band_members.band_id = bands.id;
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+4|William|28|false|2|2|Roaring Salamander|2|false
+
+Still looks the same. I think that my conditional is causing the similarity.
+
+sqlite> SELECT * FROM band_members CROSS JOIN bands;
+1|Lars|35|false|3|1|Hammers of Rose|8|true
+1|Lars|35|false|3|2|Roaring Salamander|2|false
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|1|Hammers of Rose|8|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+2|Antoine|64|true|2|3|Wiggling Pinata|5|true
+4|William|28|false|2|1|Hammers of Rose|8|true
+4|William|28|false|2|2|Roaring Salamander|2|false
+4|William|28|false|2|3|Wiggling Pinata|5|true
+sqlite> SELECT * FROM band_members JOIN bands;
+1|Lars|35|false|3|1|Hammers of Rose|8|true
+1|Lars|35|false|3|2|Roaring Salamander|2|false
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|1|Hammers of Rose|8|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+2|Antoine|64|true|2|3|Wiggling Pinata|5|true
+4|William|28|false|2|1|Hammers of Rose|8|true
+4|William|28|false|2|2|Roaring Salamander|2|false
+4|William|28|false|2|3|Wiggling Pinata|5|true
+sqlite> SELECT * FROM band_members INNER JOIN bands;
+1|Lars|35|false|3|1|Hammers of Rose|8|true
+1|Lars|35|false|3|2|Roaring Salamander|2|false
+1|Lars|35|false|3|3|Wiggling Pinata|5|true
+2|Antoine|64|true|2|1|Hammers of Rose|8|true
+2|Antoine|64|true|2|2|Roaring Salamander|2|false
+2|Antoine|64|true|2|3|Wiggling Pinata|5|true
+4|William|28|false|2|1|Hammers of Rose|8|true
+4|William|28|false|2|2|Roaring Salamander|2|false
+4|William|28|false|2|3|Wiggling Pinata|5|true
+
+Again, I don't see a difference. This might require more research.
