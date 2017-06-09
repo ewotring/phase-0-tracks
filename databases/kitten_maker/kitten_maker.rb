@@ -35,7 +35,7 @@ end
 10000.times do
   create_kitten(db, Faker::Name.name, 0)
 end
-
+#
 # explore ORM by retrieving data
 # kittens = db.execute("SELECT * FROM kittens")
 # kittens.each do |kitten|
