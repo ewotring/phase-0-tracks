@@ -45,21 +45,41 @@ def user_input
     input_array = [date, exercise, weight, reps, minutes, difficult]
 end
 
+#def fake_input
+#    date = Faker::Date.backward(365)
+#    exercise = "double clean and press with double front squat complex"
+#    weight = 106
+#    reps = Faker::Number.number(2)
+#    minutes = Faker::Number.number(2)
+#    difficult = true
+#    fake_input_array = [date, exercise, weight, reps, minutes, difficult]
+#end
+
+
 # Store user input in database
 
 def add_input (db, user_input)
     db.execute("INSERT INTO strength (date, exercise, weight, reps, minutes, difficult) VALUES (?, ?, ?, ?, ?, ?)", [user_input])
 end
 
+#def add_fake_input (db, fake_input)
+#    db.execute("INSERT INTO strength (date, exercise, weight, reps, minutes, difficult) VALUES (?, ?, ?, ?, ?, ?)", [fake_input])
+#end
+
 # Give user output from database
+strength = db.execute("SELECT * FROM strength")
+strength.each do |strength|
+    puts "On #{strength['date']}, you did #{strength['exercise']} with #{strength['weight']} for #{strength['reps']} reps in #{strength['minutes']} minutes. The session was difficult:  #{strength['difficult']}."
+end
 
 #p user_input
 add_input(db, user_input)
+#10.times do
+#    add_fake_input(db, fake_input)
+#end
+
 
 # explore ORM by retrieving data
-#strength = db.execute("SELECT * FROM strength")
-#strength.each do |strength|
-#    puts "On #{strength['date']}, you did #{strength['exercise']} with #{strength['weight']} for #{strength['reps']} reps in #{strength['minutes']} minutes. The session was difficult:  #{strength['difficult']}."
-#end
+
 #puts strength.class
 #p strength
