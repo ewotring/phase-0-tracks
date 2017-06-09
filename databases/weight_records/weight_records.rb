@@ -27,6 +27,31 @@ db.execute(create_table_cmd)
 
 # Collect user input for the day's exercise
 
+def user_input
+    puts "What is today's date?"
+    date = gets.chomp
+    puts "What exercise did you do?"
+    exercise = gets.chomp
+    # The weight should be consistently kilos or pounds
+    puts "What weight did you use?"
+    weight = gets.chomp.to_i
+    # Of course, the sets are broken into sets, but I just want to demonstrate this program for now. I can add reps per set later. This could get complicated. For example, I often do rep ladders. This would be tedious to enter the reps per set, and it would require more looping than I feel like at the moment.
+    puts "How many reps did you do?"
+    reps = gets.chomp.to_i
+    puts "How many minutes did the session take?"
+    minutes = gets.chomp.to_f
+    puts "Was the session difficult? (true or false)"
+    difficult = gets.chomp
+    return input_array = [date, exercise, weight, reps, minutes, difficult]
+end
+
 # Store user input in database
 
+def add_input (db, user_input)
+    db.execute("INSERT INTO strength (date, exercise, weight, reps, minutes, difficult) VALUES (?, ?, ?, ?, ?, ?)", [user_input])
+end
+
 # Give user output from database
+
+p user_input
+#add_input (db, user_input)
