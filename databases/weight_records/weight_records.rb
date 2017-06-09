@@ -42,7 +42,7 @@ def user_input
     minutes = gets.chomp.to_f
     puts "Was the session difficult? (true or false)"
     difficult = gets.chomp
-    return input_array = [date, exercise, weight, reps, minutes, difficult]
+    input_array = [date, exercise, weight, reps, minutes, difficult]
 end
 
 # Store user input in database
@@ -53,5 +53,13 @@ end
 
 # Give user output from database
 
-p user_input
-#add_input (db, user_input)
+#p user_input
+add_input(db, user_input)
+
+# explore ORM by retrieving data
+#strength = db.execute("SELECT * FROM strength")
+#strength.each do |strength|
+#    puts "On #{strength['date']}, you did #{strength['exercise']} with #{strength['weight']} for #{strength['reps']} reps in #{strength['minutes']} minutes. The session was difficult:  #{strength['difficult']}."
+#end
+#puts strength.class
+#p strength
