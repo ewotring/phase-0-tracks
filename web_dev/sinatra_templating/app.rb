@@ -40,7 +40,7 @@ post '/database' do
   search_results = ""
   student_list.each do |student|
     student_name = student.fetch_values("name").join.downcase
-    if student_name.include? ("#{params[:name]}")
+    if student_name.include? ("#{params[:name]}".downcase)
       search_results << "ID: #{student['id']} | Name: #{student['name']} | Age: #{student['age']} | Campus: #{student['campus']}<br>"
     end
   end
