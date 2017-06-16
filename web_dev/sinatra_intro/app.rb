@@ -77,3 +77,25 @@ get '/add_numbers/:number_1/:number_2' do
 end
 
 # Optional bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
+
+# My pair and I did something like this in 9.5, before I got to this challenge, so I will base my attempt here on that code
+
+# students_campus had to be different from earlier students queries
+get '/students_campus/:campus' do
+  students = db.execute("SELECT * FROM students")
+  response = ""
+  students.each do |student|
+    student_campus = student.fetch_values("campus").join.downcase
+    if student_campus.include? ("#{params[:campus]}".downcase)
+      response << "ID: #{student['id']}<br>"
+      response << "Name: #{student['name']}<br>"
+      response << "Age: #{student['age']}<br>"
+      response << "Campus: #{student['campus']}<br><br>"
+    end
+  end
+  if response == ""
+    "No student at that campus."
+  else
+    response
+  end
+end
