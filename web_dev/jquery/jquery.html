@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This is my experiment with jQuery</title>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#fade").click(function(){
+                $("#div1").fadeToggle("slow");
+            });
+            $("#hide").click(function(){
+                $("#div2").hide();
+            });
+            $("#show").click(function(){
+                $("#div2").show();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="fade">Click me!</button>
+    <div id="div1" style="background-color: red; color: green;">
+        <p>This animation will fade and unfade</p>
+    </div>
+    <button id="hide">Hide!</button>
+    <button id="show">Seek!</button>
+    <div id="div2">
+        <p>This text hides and seeks</p>
+    </div>
+</body>
+</html>
